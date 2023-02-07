@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Oswald:wght@700&family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+:root {
+    /*cores modelo*/
+    --color-white: #fff;
+    --color-dark1: #272727;
+    --color-dark2: #2d2d2d;
+    --color-dark3: #414141;
+    --color-dark4: #1c1c1c;
+    --color-dark5: #343434;
+    --color-purple: rgb(127, 140, 225);
+
+    /*cores teste*/
+    --color-green1: #D8F3DC;
+    --color-green2: #B7E4C7;
+    --color-green3: #95D5B2;
+    --color-green4: #74C69D;
+    --color-green5: #52B788;
+    --color-green6: #40916C;
+    --color-green7: #2D6A4F;
+    --color-green8: #1B4332;
+    --color-green9: #081C15;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*corpo da página cor e fundo da fonte*/
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: var(--color-green1);
+    color: var(--color-green8);
+    font-size: 12px;
+}
+
+/*slider*/
+.slider {
+    display: block;
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    margin-left: 30vw;
+    position: relative;
+}
+
+.slider li {
+    list-style: none;
+    position: absolute;
+}
+
+.slider img {
+    margin: auto;
+    height: 100%;
+    width: 36vw;
+    vertical-align: top;
+}
+
+.slider input {
+    display: none;
+}
+
+.slider label {
+    background-color: var(--color-green7);
+    bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    height: 15px;
+    position: absolute;
+    width: 10px;
+    z-index: 10;
+}
+
+.slider li:nth-child(1) label {
+    left: 210px;
+}
+
+.slider li:nth-child(2) label {
+    left: 240px;
+}
+
+.slider li:nth-child(3) label {
+    left: 270px;
+}
+
+.slider img {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.slider li input:checked~img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
+/*LOGO*/
+.img_logo {
+    width: 30px;
+    background-color: var(--color-green1);
+    border-radius: 10px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+/*CARD*/
+.img_1 {
+
+    width: 450px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.img_2 {
+    width: 30px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.img_3 {
+    width: 30px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.img_4 {
+
+    width: 30px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.img_5 {
+
+    width: 450px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.img_6 {
+
+    width: 600px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+/*posicionamento do cabeçalho e barra de navegação */
+.header,
+.navigation_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/*decoração do cabeçalho*/
+.header {
+    background-color: var(--color-dark2);
+    box-shadow: 1px 1px 4px var(--color-dark4);
+    height: 3.5em;
+    justify-content: space-between;
+    padding: 0 2%;
+}
+
+/*espaçamento e camada da barra de navegação*/
+.navigation_header {
+    gap: 3em;
+    z-index: 2;
+}
+
+/*decoração das âncoras da barra de navegação*/
+.navigation_header a {
+    text-decoration: none;
+    color: var(--color-green3);
+    transition: 1s;
+
+}
+
+
+/*decoração do botão home*/
+.active {
+    display: block;
+    background-color: var(--color-dark3);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.content {
+    text-align: center;
+    padding-top: 5em;
+    height: 100vh;
+    transition: 1s;
+}
+
+.line {
+    width: 250px;
+    height: 4px;
+    background: var(--color-green8);
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+.btn_icon {
+    background-color: transparent;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .btn_icon {
+        display: block;
+    }
+
+    .navigation_header {
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        background-color: var(--color-dark5);
+        height: 100VW;
+        width: 23vw;
+        padding: 2em;
+        animation-duration: 1.3s;
+        margin-left: -100vw;
+    }
+
+}
+
+@keyframes showSidebar {
+    from {
+        margin-left: -100vw;
+    }
+
+    top {
+        margin-left: -10vw;
+    }
+}
